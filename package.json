@@ -1,0 +1,26 @@
+{
+  "name": "minify-registry-metadata",
+  "version": "0.0.0",
+  "description": "how big will docs be if we trim some things out?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soldair/minify-registry-metadata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soldair/minify-registry-metadata/issues"
+  },
+  "homepage": "https://github.com/soldair/minify-registry-metadata#readme",
+  "devDependencies": {
+    "changes-stream": "^2.2.0",
+    "concurrent-couch-follower": "^1.2.0",
+    "normalize-registry-metadata": "^1.1.2",
+    "tape": "^4.6.3"
+  }
+}

@@ -1,9 +1,8 @@
 "use strict"; 
-// take metadata and remove anything the cli doesnt need to install it.
-//[ '_id',  '_rev',  'name',  'description',  'dist-tags',  'versions',  'readme',  'maintainers',  'time',  'author',  'repository',  'users',  'readmeFilename',  'homepage',  'keywords',  'contributors', 'bugs',  'license',  '_attachments' ]
 
+// take metadata and remove anything the cli doesnt need to install it.
 const keep = ['versions','time','name','_id','_rev','dist-tags', 'license' ,'repository','maintainers','author']
-const versionKeep = ['name','_id','dependencies','peerDependencies','optionalDependencies','devDependencies','bundleDependencies','dist','license','version','main','scripts','bin','deprecated','man','config','preferGlobal','engines','engine-strict']
+const versionKeep = ['name','_id','dependencies','peerDependencies','optionalDependencies','devDependencies','bundleDependencies','dist','license','version','main','scripts','bin','deprecated','man','config','preferGlobal','engines','engine-strict','_npmShrinkwrap']
 const latestKeep =  ['icon','author','maintainers','homepage','keywords','description','repository']
 
 
