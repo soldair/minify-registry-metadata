@@ -1,6 +1,6 @@
 {
   "name": "minify-registry-metadata",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "how big will docs be if we trim some things out?",
   "main": "index.js",
   "scripts": {
