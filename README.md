@@ -1,11 +1,17 @@
 # minify-registry-metadata
 
-this removes many fields from the registry metadata. this is a test to see if it makes installs faster.
+this removes fields from registry metadata not required to install the module.
 
-as of this configuration the total registry is about 5gb of uncompressed json.
 
-this filter removes about 2.9gb of data that isn't necessary for installs.
+this is based on an internal npm rfc and im sure it will make its way to the docs soon.
 
-#work in progress
+```js
+var minify = require('minify-registry-metadata')
+var request = require('request')
 
-this is an experiment. unstable.
+request.get('https://registry.npmjs.org/lodash',function(err,res,body){
+  var minifiedLodash = minify(JSON.parse(body))
+  console.log('minifiedLodash
+})
+```
+

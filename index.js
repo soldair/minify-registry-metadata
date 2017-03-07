@@ -1,10 +1,8 @@
 "use strict"; 
 
 // take metadata and remove anything the cli doesnt need to install it.
-const keep = ['versions','time','name','_id','_rev','dist-tags', 'license' ,'repository','maintainers','author']
-const versionKeep = ['name','_id','dependencies','peerDependencies','optionalDependencies','devDependencies','bundleDependencies','dist','license','version','main','scripts','bin','deprecated','man','config','preferGlobal','engines','engine-strict','_hasShrinkwrap']
-const latestKeep =  ['icon','author','maintainers','homepage','keywords','description','repository']
-
+const keep = ['versions','name','dist-tags']
+const versionKeep = ['name','version','dependencies','optionalDependencies','devDependencies','bundleDependencies','bundledDependencies','peerDependencies','bin','_hasShrinkwrap','directories','dist','engines']
 
 module.exports = function(doc){
   // not registry metadata
@@ -32,21 +30,12 @@ module.exports = function(doc){
     }
     smallVersions[v] = smallVersion
   })
-  
-
-  var latest = doc['dist-tags'].latest
-  if(latest){
-    for(let i=0;i<latestKeep.length;++i){
-      if(doc.versions[latest][latestKeep[i]] !== undefined) {
-        smallVersions[latest][latestKeep[i]] =  doc.versions[latest][latestKeep[i]]
-      }
-    }
-  }
 
   out.versions = smallVersions;
+
+  var mtime = (doc.time||{}).modified
+  if(mtime) out.modified = mtime
 
   return out
 }
 
-// tombstones?
-// need to find out if the package.json that ends up in node_modules is the one from the tarball or the registry.
