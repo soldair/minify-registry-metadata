@@ -1,6 +1,6 @@
 {
   "name": "minify-registry-metadata",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "minimal regsitry packuments. :corgi:",
   "main": "index.js",
   "scripts": {
