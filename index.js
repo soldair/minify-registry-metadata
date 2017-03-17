@@ -18,7 +18,7 @@ module.exports = function(doc){
   }
 
   // versions.
-  var versions = Object.keys(doc.versions)
+  var versions = Object.keys(doc.versions||{})
   var smallVersions = {}
   versions.forEach(function(v){
     var version = doc.versions[v]
