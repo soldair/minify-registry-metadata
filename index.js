@@ -2,7 +2,7 @@
 
 // take metadata and remove anything the cli doesnt need to install it.
 const keep = ['versions','name','dist-tags']
-const versionKeep = ['name','version','dependencies','optionalDependencies','devDependencies','bundleDependencies','bundledDependencies','peerDependencies','bin','_hasShrinkwrap','directories','dist','engines']
+const versionKeep = ['name','version','dependencies','optionalDependencies','devDependencies','bundleDependencies','bundledDependencies','peerDependencies','bin','_hasShrinkwrap','directories','dist','engines','deprecated']
 
 module.exports = function(doc){
   // not registry metadata
